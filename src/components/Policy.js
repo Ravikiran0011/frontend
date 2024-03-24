@@ -12,9 +12,7 @@ function Policy() {
   const policy = policies.find((p) => p._id === id);
   const DeletePolicy = async (id) => {
     try {
-      const resp = await axios.delete(
-        process.env.REACT_APP_SERVER + "/policy/" + id
-      );
+      const resp = await axios.delete("http://localhost:2000/policies", policy);
       navigate("/home");
     } catch (error) {
       console.error("Error:", error);

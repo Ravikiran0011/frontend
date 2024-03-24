@@ -15,13 +15,10 @@ function Login() {
 
     // send a req to server
     try {
-      const resp = await axios.post(
-        process.env.REACT_APP_SERVER + "/loginpolicyholder",
-        {
-          email: email,
-          password: password,
-        }
-      );
+      const resp = await axios.post("http://localhost:2000/policyholder", {
+        email: email,
+        password: password,
+      });
       // Assuming the response contains the user data
       const userData = resp.data;
       console.log(userData);

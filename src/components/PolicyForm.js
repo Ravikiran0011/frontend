@@ -27,15 +27,12 @@ const CreatePolicyForm = () => {
     console.log(policyData, "data");
     // send a req to server
     try {
-      const resp = await axios.post(
-        process.env.REACT_APP_SERVER + "/createpolicy",
-        {
-          id,
-          policy: policyData.policy,
-          amount: policyData.amount,
-          status: policyData.status,
-        }
-      );
+      const resp = await axios.post("http://localhost:2000/createpolicy", {
+        id,
+        policy: policyData.policy,
+        amount: policyData.amount,
+        status: policyData.status,
+      });
       // Assuming the response contains the user data
       const respolicy = resp.data;
       console.log("result", respolicy);

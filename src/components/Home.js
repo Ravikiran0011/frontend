@@ -21,9 +21,7 @@ function Home() {
       // const response = await fetch('your-api-endpoint');
       // const data = await response.json();
       // console.log(data);
-      const resp = await axios.get(
-        process.env.REACT_APP_SERVER + "/policies/" + id
-      );
+      const resp = await axios.get("http://localhost:2000/Home.js");
       localStorage.setItem("policies", JSON.stringify(resp.data));
       const policiesdata = Object.values(resp.data);
       setHomestate({

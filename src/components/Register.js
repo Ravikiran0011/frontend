@@ -17,14 +17,11 @@ function Register() {
     // send a req to server
     console.log(process.env);
     try {
-      const resp = await axios.post(
-        process.env.REACT_APP_SERVER + "/policyholder",
-        {
-          name: name,
-          email: email,
-          password: password,
-        }
-      );
+      const resp = await axios.post("http://localhost:2000/policyholder", {
+        name: name,
+        email: email,
+        password: password,
+      });
       // Assuming the response contains the user data
       const userData = resp.data;
       localStorage.setItem("id", userData._id);
